@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    MySqlBackupRawBytesConsoleTest
+
+    Console test harness for MySqlBackup.NET.RawBytes. Connects to a local test
+    MySQL server, exercises the streaming + buffered dump engines under a range
+    of option sets, and performs a full library round-trip (dump -> restore).
+
+    Targets net48 so it runs on the classic .NET Framework runtime. Add target
+    frameworks (e.g. net8.0) if you want to exercise the library on modern .NET
+    as well - the referenced library multi-targets netstandard2.0 + net48, so it
+    lights up under either.
+  -->
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <LangVersion>7.3</LangVersion>
+    <RootNamespace>RawBytesDumpTest</RootNamespace>
+    <AssemblyName>MySqlBackupRawBytesConsoleTest</AssemblyName>
+    <Deterministic>true</Deterministic>
+
+    <!--
+      Assembly-level attributes are supplied by the hand-written
+      Properties\AssemblyInfo.cs, so disable the auto-generated set to avoid
+      duplicate-attribute compile errors.
+    -->
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Reference the core library by project. -->
+    <ProjectReference Include="..\MySqlBackupRawBytes\MySqlBackupRawBytes.csproj" />
+  </ItemGroup>
+
+</Project>

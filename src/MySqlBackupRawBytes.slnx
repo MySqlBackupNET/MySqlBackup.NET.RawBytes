@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="MySqlBackupRawBytes/MySqlBackupRawBytes.csproj" Id="b8f73eb8-ee4b-4d43-a255-28b52c3d637f" />
+  <Project Path="MySqlBackupRawBytesConsoleTest/MySqlBackupRawBytesConsoleTest.csproj" Id="5daf5173-b0bb-4519-b8cf-04daef73c1eb" />
+  <Project Path="MySqlBackupRawBytesWinFormsApp/MySqlBackupRawBytesWinFormsApp.csproj" Id="3a9a96ec-0d01-4041-a940-a7746ee4ddc7" />
+</Solution>

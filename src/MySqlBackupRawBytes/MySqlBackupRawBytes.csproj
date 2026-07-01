@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    MySqlBackup.NET.RawBytes  -  pure C# class library.
+
+    Zero-dependency MySQL backup & restore engine that speaks the MySQL wire
+    protocol directly. Builds against a broad range of runtimes:
+
+      * net48            -  .NET Framework 4.8        (C# 7.3 language level)
+      * netstandard2.0   -  consumed by .NET Core 2.x/3.x, .NET 5/6/7/8+,
+                            Mono, Xamarin, UWP, etc.
+
+    netstandard2.0 is the single most portable target on offer, so the library
+    is usable from essentially every modern .NET runtime without listing each
+    one explicitly. net48 is kept as an explicit target so the assembly can be
+    referenced directly by classic .NET Framework projects and so the code is
+    continuously verified to compile under C# 7.3.
+  -->
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net48</TargetFrameworks>
+
+    <!--
+      Pin the language version to 7.3 for ALL targets. 7.3 is the highest level
+      guaranteed available on the classic .NET Framework / MSBuild toolchain,
+      so coding to it keeps the source buildable everywhere (including inside a
+      .NET Framework-only Visual Studio install).
+    -->
+    <LangVersion>7.3</LangVersion>
+
+    <RootNamespace>MySqlBackup.NET.RawBytes</RootNamespace>
+    <AssemblyName>MySqlBackup.NET.RawBytes</AssemblyName>
+
+    <!--
+      Assembly-level attributes (title, version, GUID, etc.) are supplied by the
+      hand-written Properties\AssemblyInfo.cs, so disable the auto-generated set
+      to avoid duplicate-attribute compile errors.
+    -->
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Deterministic>true</Deterministic>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <!--
+    SDK-style projects auto-include every .cs file in the folder tree. The dumps\
+    *.sql sample files, README, etc. are data/docs, not compiled. Nothing extra
+    to list here; the engine sources under Dump\ and Wire\ are picked up
+    automatically.
+  -->
+
+</Project>
